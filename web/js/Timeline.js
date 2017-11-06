@@ -70,6 +70,15 @@ class Timeline {
 		}
 	}
 
+	drawString(ctx, txt, x, y) {
+		txt = txt.split("<br>");
+		var txtHeight = parseInt(ctx.font);
+
+		for (let i = 0; i < txt.length; i++) {
+			ctx.fillText(txt[i], x, y + i * (txtHeight + txtHeight/4));
+		}
+	}
+
 	tick (ctx) {
 		if (this.background.complete) {
 			let bgSpeed = this.data.scrollSpeed;
@@ -118,9 +127,7 @@ class Timeline {
 					
 					ctx.fillStyle = this.data.panel.fontColor;
 					ctx.font = this.data.panel.fontSize + " " + this.data.panel.fontFamily;
-					ctx.fillText(panel[0], 
-								 panel[1] + this.data.panel.left, 
-								 this.data.panel.y + this.data.panel.top)
+					this.drawString(ctx, panel[0], panel[1] + this.data.panel.left, this.data.panel.y + this.data.panel.top);
 
 
 					if (panel[1] < -this.panel.width) {
@@ -139,7 +146,7 @@ class Timeline {
 				
 				ctx.fillStyle = this.data.runner.bubble.fontColor;
 				ctx.font = this.data.runner.bubble.fontSize + " " + this.data.runner.bubble.fontFamily;
-				ctx.fillText(this.data.events[this.currentEvent].bubbleText, 
+				this.drawString(ctx, this.data.events[this.currentEvent].bubbleText, 
 							 bubbleX + this.data.runner.bubble.left, 
 							 bubbleY+ this.data.runner.bubble.top);
 				
@@ -161,9 +168,10 @@ class Timeline {
 				if (this.endingPercent == 1.0) {
 					ctx.fillStyle = this.data.ending.fontColor;
 					ctx.font = this.data.ending.fontSize + " " + this.data.ending.fontFamily;
-					ctx.fillText(this.data.ending.text, 
+					this.drawString(ctx, this.data.ending.text, 
 								 this.data.ending.left, 
 								 this.data.ending.top);
+					
 				}
 			}
 		}

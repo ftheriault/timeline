@@ -1,8 +1,8 @@
 let data = {
-	title : "Timeline animation",
+	title : "Biography",
 	backgroundColor : "#ccc",
 	scrollSpeed : 2,
-	runDelayBetweenEvent : 4000, 
+	runDelayBetweenEvent : 1000, 
 	backgroundImage : "images/swamp.png",
 	runner : {
 		x : 150,
@@ -25,39 +25,44 @@ let data = {
 			offsetY : -150,
 			fontColor : "black",
 			left : 40,
-			top : 39,
+			top : 35,
 			fontFamily : "Arial",
-			fontSize : "18px",
+			fontSize : "16px",
 			image : "images/bubble.png"
 		}
 	},
 	panel : {
 		left : 15,
-		top : 30,
+		top : 28,
 		fontColor : "white",
 		fontFamily : "Arial",
-		fontSize : "24px",
+		fontSize : "22px",
 		image : "images/arrow.png",
 		y : 250
 	},
 	events : [
 		{
-			panelText : "1990",
-			bubbleText : "J'ai gradué!",
-			desc : "Lorem ipsum...",
+			panelText : "Cégep",
+			bubbleText : "Awesome!",
+			desc : "",
 		},
 		{
-			panelText : "1992",
-			bubbleText : "Ha oui, le xyz!",
-			desc : "Lorem ipsum...",
+			panelText : "Bacc",
+			bubbleText : "Really<br>cool",
+			desc : "",
+		},
+		{
+			panelText : "Msc",
+			bubbleText : "Neuroscience",
+			desc : "",
 		},
 	],
 	ending: {
 		top : 130,
-		left : 100,
+		left : 30,
 		fontColor : "white",
 		fontFamily : "Arial",
 		fontSize : "40px",
-		text : "Et maintenant???",
+		text : "Et<br>maintenant ???",
 	}
 }
