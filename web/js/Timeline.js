@@ -99,8 +99,8 @@ class Timeline {
 			}
 
 			ctx.drawImage(this.background, this.backgroundX - this.canvasWidth, 0);
-			ctx.drawImage(this.background, this.backgroundX, 0);
-			ctx.drawImage(this.background, this.backgroundX + this.canvasWidth, 0);
+			ctx.drawImage(this.background, this.backgroundX - 1, 0);
+			ctx.drawImage(this.background, this.backgroundX + this.canvasWidth - 2, 0);
 			this.backgroundX -= bgSpeed;
 
 			if (this.backgroundX <= -this.canvasWidth/2) {
